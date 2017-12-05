@@ -12,7 +12,7 @@ http {
 
   # Language detection from header "Accept-Language"
   map $http_accept_language $lang {
-    default 0;
+    default      en;
     ~*^zh-hk     zh-hk;
     ~*^zh-mo     zh-hk;
     ~*^zh-tw     zh-hk;
@@ -93,6 +93,20 @@ server {
   ...
 
   include /etc/nginx/error-pages.conf;
+
+  ...
+}
+```
+
+If you want to display "Under Maintenance" page:
+```
+server {
+  ...
+
+  if ($uri ~ ^. ) {
+    error_page  503  /maintenance-503.html;
+    return 503;
+  }
 
   ...
 }
