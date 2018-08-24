@@ -30,6 +30,7 @@ http {
     ~*^es        es;
     ~*^fr        fr;
     ~*^de        de;
+    ~*^cy        cy;
 
     ~*(^en|,en)  en;
 
@@ -50,6 +51,7 @@ http {
     ~*,es        es;
     ~*,fr        fr;
     ~*,de        de;
+    ~*,cy        cy;
   }
 
   ...
